@@ -19,7 +19,7 @@ if ((playerSelection === 'rock' && computerSelection === 'siss') ||
 
 }
 
-const playerSelection = prompt("Enter rock paper siss");
+const playerSelection = 'siss';
 const computerSelection = computerPlay();
 
 
@@ -40,10 +40,15 @@ function computerPlay() {
 
 };
 
-// console.log(computerSelection);
+for (let i = 0; i < 5; i++) {
 console.log(`Player selected ${playerSelection}`);
 console.log(`Computer selected ${computerSelection}`);
-console.log(singleRound(playerSelection, computerSelection)); 
+console.log(singleRound(playerSelection, computerSelection));    
+}
+
+// console.log(`Player selected ${playerSelection}`);
+// console.log(`Computer selected ${computerSelection}`);
+// console.log(singleRound(playerSelection, computerSelection)); 
  
 
 
