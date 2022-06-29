@@ -1,27 +1,5 @@
-function singleRound (playerSelection, computerSelection) {
-
-if ((playerSelection === 'rock' && computerSelection === 'siss') ||
-    (playerSelection === 'paper' && computerSelection === 'rock')||
-    (playerSelection === 'siss' && computerSelection === 'paper')) {
-        console.log('Player win')
-    } else if((playerSelection === 'siss' && computerSelection === 'rock')||
-              (playerSelection ==='rock' && computerSelection === 'paper')||
-              (playerSelection === 'paper' && computerSelection === 'siss')){
-
-        console.log('Computer Win');
-    } else if (playerSelection === computerSelection) {
-        console.log("It's a tie");
-    }
-    
-    else {
-        console.log('typo mistake');
-    }
-
-}
-
-const playerSelection = 'siss';
-const computerSelection = computerPlay();
-
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
 
 function computerPlay() {                                    
 
@@ -40,15 +18,43 @@ function computerPlay() {
 
 };
 
-for (let i = 0; i < 5; i++) {
-console.log(`Player selected ${playerSelection}`);
-console.log(`Computer selected ${computerSelection}`);
-console.log(singleRound(playerSelection, computerSelection));    
+function singleRound (playerSelection, computerSelection) {
+
+if ((playerSelection === 'rock' && computerSelection === 'siss') ||
+    (playerSelection === 'paper' && computerSelection === 'rock')||
+    (playerSelection === 'siss' && computerSelection === 'paper')) {
+        userScore++;
+        return 'Player Win';                                           // Statements after Return don't execute.
+    } else if((playerSelection === 'siss' && computerSelection === 'rock')||
+              (playerSelection ==='rock' && computerSelection === 'paper')||
+              (playerSelection === 'paper' && computerSelection === 'siss')){
+
+        computerScore++;        
+        return 'Computer Win';                                          // Statements after Return don't execute.
+        
+    } else if (playerSelection === computerSelection) {
+        return 'It\'s a tie';
+    }
+    
+    else {
+        return 'typo mistake';
+    }
+
 }
 
-// console.log(`Player selected ${playerSelection}`);
-// console.log(`Computer selected ${computerSelection}`);
-// console.log(singleRound(playerSelection, computerSelection)); 
- 
+
+function myGame() {
+    for (var i = 0; i<5; i++) {
+        const playerSelection = "rock"
+        const computerSelection = computerPlay();
+        console.log(`Player selection is ${playerSelection} and Player Score is ${userScore}`);
+        console.log(`Computer selection is ${computerSelection} and Computer Score is ${computerScore}`);
+        console.log(singleRound(playerSelection, computerSelection));
+    
+    }
+    
+}
+
+ console.log(myGame());
 
 
