@@ -20,19 +20,19 @@ function computerPlay() {
 
 function singleRound (playerSelection, computerSelection) {
 
-if ((playerSelection === 'rock' && computerSelection === 'siss') ||
-    (playerSelection === 'paper' && computerSelection === 'rock')||
-    (playerSelection === 'siss' && computerSelection === 'paper')) {
+if ((playerSelection.toLowerCase() === 'rock' && computerSelection === 'siss') ||
+    (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock')||
+    (playerSelection.toLowerCase() === 'siss' && computerSelection === 'paper')) {
         userScore++;
         return 'Player Win';                                           // Statements after Return don't execute.
-    } else if((playerSelection === 'siss' && computerSelection === 'rock')||
-              (playerSelection ==='rock' && computerSelection === 'paper')||
-              (playerSelection === 'paper' && computerSelection === 'siss')){
+    } else if((playerSelection.toLowerCase() === 'siss' && computerSelection === 'rock')||
+              (playerSelection.toLowerCase() ==='rock' && computerSelection === 'paper')||
+              (playerSelection.toLowerCase() === 'paper' && computerSelection === 'siss')){
 
         computerScore++;        
         return 'Computer Win';                                          // Statements after Return don't execute.
         
-    } else if (playerSelection === computerSelection) {
+    } else if (playerSelection.toLowerCase() === computerSelection) {
         return 'It\'s a tie';
     }
     
@@ -45,7 +45,7 @@ if ((playerSelection === 'rock' && computerSelection === 'siss') ||
 
 function myGame() {
     for (var i = 0; i<5; i++) {
-        const playerSelection = "rock"
+        const playerSelection = prompt("Enter either of Rock, Paper or Siss:")
         const computerSelection = computerPlay();
         console.log(`Player selection is ${playerSelection} and Player Score is ${userScore}`);
         console.log(`Computer selection is ${computerSelection} and Computer Score is ${computerScore}`);
